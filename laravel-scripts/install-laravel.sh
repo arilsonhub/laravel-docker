@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd /var/www/html/condominio
+cd /var/www/html/<your-app>
 
 echo "Copying the configuration example file"
 cp .env.example .env
