@@ -1,0 +1,25 @@
+version: '3'
+
+services:  
+  postgres:
+    image: postgres:9.5
+    container_name: <your-app>-pgsql
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data/
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER:postgres
+      - POSTGRES_PASSWORD:123456
+      - PG_VERSION:9.5        
+  apache:
+    build:
+      context: ./
+    container_name: <your-app>-app
+    volumes:
+      - ./html:/var/www/html
+      - ./config/virtualHost.conf:/etc/apache2/sites-available/000-default.conf
+    ports:
+      - "3000:80"
+    links:
+      - postgres
