@@ -15,6 +15,6 @@ RUN apt-get update \
   && php /tmp/composer-setup.php --no-ansi --install-dir=/usr/local/bin --filename=composer --snapshot \
   && rm -f /tmp/composer-setup.* \
   && export DEBIAN_FRONTEND=noninteractive \
-	&& apt-get install -y tzdata \
-	&& ln -fs /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime \
-	&& dpkg-reconfigure --frontend noninteractive tzdata
+  && apt-get install -y tzdata \
+  && ln -fs /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime \
+  && dpkg-reconfigure --frontend noninteractive tzdata
