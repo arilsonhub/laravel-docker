@@ -6,6 +6,8 @@ services:
     container_name: <your-app>-pgsql
     volumes:
       - ./postgres_data:/var/lib/postgresql/data/
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
     ports:
       - 5432:5432
     environment:
