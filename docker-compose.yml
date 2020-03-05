@@ -19,6 +19,8 @@ services:
     volumes:
       - ./html:/var/www/html
       - ./config/virtualHost.conf:/etc/apache2/sites-available/000-default.conf
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
     ports:
       - "3000:80"
     links:
