@@ -9,7 +9,7 @@
             "log": true,
             "externalConsole": false,
             "pathMappings": {
-                "/var/www/html": "${workspaceRoot}",
+                "/var/www/html/<your-app>": "${workspaceRoot}/html/<your-app>",
             }            
         }
     ]
